@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bim494_Hw1.MainPage" BackgroundColor="White" Title="My Personal Dictionary">
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical">
+            <StackLayout VerticalOptions="StartAndExpand" Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                
+                    <Entry x:Name="EntryTxt" Margin="10,10,0,0" HorizontalOptions="Start" WidthRequest="300" Placeholder="Enter Some Text!" PlaceholderColor="Gray"></Entry>
+                    <Image HorizontalOptions="End" Source="https://cdn2.iconfinder.com/data/icons/atrous/512/search_magnifying_glass_find-256.png" HeightRequest="30" WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+                <Label Margin="20,20,0,0" x:Name="TranslatedWord" FontSize="18" FontAttributes="Bold"></Label>
+            </StackLayout>
+            
+             <StackLayout Margin="0,0,0,20" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                <StackLayout Margin="20,0,0,0" HorizontalOptions="Start" Orientation="Vertical">
+                    
+                    <StackLayout Orientation="Horizontal">
+                        
+                        <Label Text="TR > EN"></Label>
+                        <Switch x:Name="trtoen" BackgroundColor="White" Toggled="Trtoen_Toggled"></Switch>
+                        
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        
+                        <Label Text="EN > TR"></Label>
+                        <Switch x:Name="entotr" BackgroundColor="White" Toggled="Entotr_Toggled"></Switch> 
+                        
+                    </StackLayout>
+                </StackLayout>
+                
+                <Button HorizontalOptions="End" WidthRequest="210" Text="CONFIG" Clicked="Button_Clicked"></Button>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

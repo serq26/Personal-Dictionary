@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Bim494_Hw1"
+             x:Class="Bim494_Hw1.Login" Title="My Personal Dictionary">
+
+    <StackLayout Orientation="Vertical" Padding="20">
+        <Entry  x:Name="_email" Placeholder="Email" PlaceholderColor="Gray" FontSize="16" TextChanged="_email_TextChanged"></Entry>
+        <Entry IsPassword="True" x:Name="_password" Placeholder="Password" PlaceholderColor="Gray" FontSize="16" TextChanged="_password_TextChanged"></Entry>
+        <Button Clicked="Button_Clicked" Text="REGISTER OR SIGN IN"></Button>
+        <Label x:Name="statusMessage" TextColor="Red"></Label>
+    </StackLayout>
+
+</ContentPage>

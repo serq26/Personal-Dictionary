@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bim494_Hw1.ConfigPage" Title="My Personal Dictionary">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            
+            <StackLayout Padding="20" VerticalOptions="Start">
+                <Entry x:Name="TurkishWord" Placeholder="Turkish/OldWord/Delete" PlaceholderColor="Gray"></Entry>
+                <Entry x:Name="EnglishWord" Placeholder="English/NewWord" PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+            <StackLayout Margin="10,0,0,0" VerticalOptions="Center" Orientation="Horizontal" HeightRequest="250">
+                <Label Text="For UPDATE: " TextColor="Green" FontAttributes="Bold" FontSize="16"></Label>
+                <Label Text="First entry is oldword, Second entry is newword" FontSize="14" TextColor="Black"></Label>
+            </StackLayout>
+            <StackLayout Margin="10,10,0,0"  VerticalOptions="Center" Orientation="Horizontal" HeightRequest="260">
+                <Label Text="For DELETE: " TextColor="Green" FontAttributes="Bold" FontSize="16"></Label>
+                <Label Text="Write the word that you want to delete in the first entry" FontSize="14" TextColor="Black"></Label>
+            </StackLayout>
+            <StackLayout VerticalOptions="Center">
+            <ListView x:Name="peopleList">
+                <ListView.ItemTemplate>
+                    <DataTemplate> 
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5" Orientation="Horizontal">
+                                <Label Text="{Binding TurkishWord}" TextColor="Black" FontSize="15" />
+                                <Label Margin="30,0,0,0" Text="{Binding EnglishWord}" TextColor="Black" FontSize="15" />
+                                    <Label Text="{Binding Id}" Margin="30,0,0,0"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                <Button Text="ADD NEW WORD" Clicked="AddWord"></Button>
+                <Button Text="UPDATE A WORD" Clicked="UpdateWord"></Button>
+                <Button Text="DELETE A WORD" Clicked="DeleteWord"></Button>
+                <Button Text="GET ALL WORDS" Clicked="GetWord"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
