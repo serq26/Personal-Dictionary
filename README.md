@@ -1,2 +1,2 @@
 # Personal-Dictionary
-This is personal dictionary. Tr > En and En > Tr
+This is personal dictionary. Turkish > English and English > Turkish
