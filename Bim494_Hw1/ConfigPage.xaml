@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bim494_Hw1.ConfigPage" Title="My Personal Dictionary">
+             x:Class="Bim494_Hw1.ConfigPage" Title="Config">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             
@@ -10,11 +10,11 @@
                 <Entry x:Name="EnglishWord" Placeholder="English/NewWord" PlaceholderColor="Gray"></Entry>
             </StackLayout>
             <StackLayout Margin="10,0,0,0" VerticalOptions="Center" Orientation="Horizontal" HeightRequest="250">
-                <Label Text="For UPDATE: " TextColor="Green" FontAttributes="Bold" FontSize="16"></Label>
+                <Label Text="For UPDATE: " TextColor="Green" FontSize="14"></Label>
                 <Label Text="First entry is oldword, Second entry is newword" FontSize="14" TextColor="Black"></Label>
             </StackLayout>
-            <StackLayout Margin="10,10,0,0"  VerticalOptions="Center" Orientation="Horizontal" HeightRequest="260">
-                <Label Text="For DELETE: " TextColor="Green" FontAttributes="Bold" FontSize="16"></Label>
+            <StackLayout Margin="10,10,0,0"  VerticalOptions="Center" Orientation="Horizontal" HeightRequest="250">
+                <Label Text="For DELETE: " TextColor="Green" FontSize="14"></Label>
                 <Label Text="Write the word that you want to delete in the first entry" FontSize="14" TextColor="Black"></Label>
             </StackLayout>
             <StackLayout VerticalOptions="Center">

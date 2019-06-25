@@ -11,17 +11,17 @@ namespace Bim494_Hw1
     public class UserRepository
     {
        
-        SQLiteConnection conn , connWords;
+        static SQLiteConnection conn , connWords;
         public string StatusMessage { get; set; }
        
 
         public UserRepository(string dbPath)
         {
             conn = new SQLiteConnection(dbPath);
-            conn.CreateTable<Users>();
+            conn.CreateTable<Users>(); // Connection to the Users Table
 
             connWords = new SQLiteConnection(dbPath);
-            connWords.CreateTable<Words>();
+            connWords.CreateTable<Words>();  // Connection to the Words Table
         }
 
 
@@ -75,29 +75,6 @@ namespace Bim494_Hw1
             {
                 return control = false;
             }
-
-            //var GetEmail = conn.Query<Users>($"SELECT Email FROM Users WHERE Email = '{_Email}'");
-            //var GetPassword = conn.Query<Users>($"SELECT Password FROM Users WHERE Password = '{_Password}'");
-            //bool control;
-
-                //if (GetEmail.ToString() == _Email && GetPassword.ToString() == _Password)
-                //{
-                //    return control = true;
-                //}
-                //else
-                //{
-                //    return control = false;
-                //}
-
-
-
-
-                //bool check = users.Contains(new Users
-                //{
-                //    Email = _Email,
-                //    Password = _Password
-                //});
-
         }
 
 
@@ -181,7 +158,6 @@ namespace Bim494_Hw1
 
         public void DeleteWord(string word)
         {
-           
             
             try
             {
@@ -200,7 +176,7 @@ namespace Bim494_Hw1
         }
 
 
-        public List<Words> GetAllWord()
+        public static List<Words> GetAllWord()
         {
             try
             {
@@ -208,13 +184,13 @@ namespace Bim494_Hw1
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+               // StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
             }
 
             return new List<Words>();
         }
 
-        public string GetEnglishWord(string Word)
+        public static string GetEnglishWord(string Word)
         {
             try
             {
@@ -228,10 +204,17 @@ namespace Bim494_Hw1
            
         }
 
-        public string GetTurkishWord(string Word)
+        public static string GetTurkishWord(string Word)
         {
-            var Turkdata = connWords.Query<Words>($"SELECT TurkishWord FROM Words WHERE EnglishWord='{Word}'");
-            return Turkdata[0].TurkishWord;
+            try
+            {
+                var Turkdata = connWords.Query<Words>($"SELECT TurkishWord FROM Words WHERE EnglishWord='{Word}'");
+                return Turkdata[0].TurkishWord;
+            }
+            catch (Exception ex)
+            {
+                return "There is no this word..!";
+            }
         }
     }
 }

@@ -25,28 +25,28 @@ namespace Bim494_Hw1
 
             App.UserRepo.AddNewWord(TurkishWord.Text, EnglishWord.Text);
             DependencyService.Get<IMessage>().Message(App.UserRepo.StatusMessage);
-            //await DisplayAlert("Information",App.UserRepo.StatusMessage,"OK","Cancel");
+            
         }
 
         private void UpdateWord(object sender, EventArgs e)
         {
             App.UserRepo.UpdateWord(TurkishWord.Text, EnglishWord.Text);
             DependencyService.Get<IMessage>().Message(App.UserRepo.StatusMessage);
-            //await DisplayAlert("Information", App.UserRepo.StatusMessage, "OK", "Cancel");
+            
         }
 
         private void DeleteWord(object sender, EventArgs e)
         {
             App.UserRepo.DeleteWord(TurkishWord.Text);
             DependencyService.Get<IMessage>().Message(App.UserRepo.StatusMessage);
-            //await DisplayAlert("Information", App.UserRepo.StatusMessage, "OK", "Cancel");
+            
            
         }
 
         private void GetWord(object sender, EventArgs e)
         {
             
-            List<Words> users = App.UserRepo.GetAllWord();
+            List<Words> users = UserRepository.GetAllWord();  // changed
             peopleList.ItemsSource = users;
             
         }

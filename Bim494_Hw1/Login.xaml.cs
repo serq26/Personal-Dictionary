@@ -14,8 +14,7 @@ namespace Bim494_Hw1
 {
     public partial class Login : ContentPage 
     {
-        Users U1 = new Users();
-
+        
         public Login()
         {
             InitializeComponent();
@@ -44,16 +43,7 @@ namespace Bim494_Hw1
             }
             
         }
-
-        //private void GetAllClicked(object sender, EventArgs e)
-        //{
-        //    statusMessage.Text = "";
-
-        //    List<Users> users = App.UserRepo.GetAllPeople();
-        //    peopleList.ItemsSource = users;
-
-        //}
-
+        
         private void _email_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(_email.Text.Contains("@") == false)

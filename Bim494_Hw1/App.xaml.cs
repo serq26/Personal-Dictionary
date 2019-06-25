@@ -17,7 +17,7 @@ namespace Bim494_Hw1
 
             UserRepo = new UserRepository(dbPath);
 
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new FirstScreen());
 
            //MainPage = new ConfigPage();
 

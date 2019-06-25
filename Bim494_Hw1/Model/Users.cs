@@ -7,24 +7,9 @@ using SQLite;
 namespace Bim494_Hw1.Model
 {
     [Table("Users")]
-    public class Users : INotifyPropertyChanged
+    public class Users
     {
-        private string validateError;
-        public string ValidateError
-        {
-            get
-            {
-                return validateError;
-            }
-            set
-            {
-                validateError = value;
-                //OnPropertyChanged("ValidateError");
-            }
-        }
-
-
-
+        
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
@@ -34,32 +19,6 @@ namespace Bim494_Hw1.Model
         [MaxLength(200)]
         public string Password { get; set; }
 
-        //private string _password;
-        //[MaxLength(200)]
-        //public string Password
-        //{
-        //    get
-        //    {
-        //        return _password;
-        //    }
-        //    set
-        //    {
-        //        _password = value;
-
-        //        if (value.Length < 4)
-        //        {
-        //            validateError = "This password is too short";
-        //            OnPropertyChanged("ValidateError");
-        //        }
-
-        //    }
-        //}
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName]string propName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
+        
     }
 }

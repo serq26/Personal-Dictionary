@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bim494_Hw1.MainPage" BackgroundColor="White" Title="My Personal Dictionary">
+             x:Class="Bim494_Hw1.MainPage" BackgroundColor="White" Title="My Vocabulary">
     <ContentPage.Content>
         <StackLayout  Orientation="Vertical">
             <StackLayout VerticalOptions="StartAndExpand" Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                 
-                    <Entry x:Name="EntryTxt" Margin="10,10,0,0" HorizontalOptions="Start" WidthRequest="300" Placeholder="Enter Some Text!" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="EntryTxt" Margin="10,10,0,0" HorizontalOptions="Start" WidthRequest="340" Placeholder="Enter Word" PlaceholderColor="Gray"></Entry>
                     <Image HorizontalOptions="End" Source="https://cdn2.iconfinder.com/data/icons/atrous/512/search_magnifying_glass_find-256.png" HeightRequest="30" WidthRequest="30">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
@@ -15,30 +15,54 @@
                     </Image>
 
                 </StackLayout>
-                <Label Margin="20,20,0,0" x:Name="TranslatedWord" FontSize="18" FontAttributes="Bold"></Label>
+                <Label Margin="20,10,0,10" x:Name="TranslatedWord" FontSize="18" FontAttributes="Bold" TextColor="Green"></Label>
             </StackLayout>
-            
-             <StackLayout Margin="0,0,0,20" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+            <!--<BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,0,0,0"/>-->
+
+            <!--<StackLayout HeightRequest="400" VerticalOptions="Center" HorizontalOptions="Center" Margin="20,20,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="English" FontAttributes="Bold" TextDecorations="Underline" Margin="40,0,0,0"/>
+                    <Image Source="https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-512.png" HeightRequest="20" WidthRequest="20"/>
+                    <Image Margin="90,0,0,0" Source="https://cdn1.iconfinder.com/data/icons/rounded-flat-country-flag-collection-1/2000/tr-01.png" HeightRequest="20" WidthRequest="20"/>
+                    <Label Text="Turkish" FontAttributes="Bold" TextDecorations="Underline" Margin="0,0,0,0"/>
+                </StackLayout>
+                <ListView x:Name="peopleList" SeparatorColor="Gray">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="30">
+                                <StackLayout Padding="5" Orientation="Horizontal">
+                                    <Label Margin="45,0,0,0" Text="{Binding EnglishWord}" TextColor="Black" FontSize="18" />
+                                    <Label Margin="155,0,0,0" Text="{Binding TurkishWord}" TextColor="Black" FontSize="18" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>-->
+
+            <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,400,0,0"/>
+
+            <StackLayout Margin="0,0,0,20" Orientation="Horizontal" VerticalOptions="EndAndExpand">
 
                 <StackLayout Margin="20,0,0,0" HorizontalOptions="Start" Orientation="Vertical">
-                    
-                    <StackLayout Orientation="Horizontal">
+
+                    <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
                         
                         <Label Text="TR > EN"></Label>
-                        <Switch x:Name="trtoen" BackgroundColor="White" Toggled="Trtoen_Toggled"></Switch>
+                        <Switch x:Name="trtoen" BackgroundColor="White"></Switch>
                         
                     </StackLayout>
                     
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
                         
                         <Label Text="EN > TR"></Label>
-                        <Switch x:Name="entotr" BackgroundColor="White" Toggled="Entotr_Toggled"></Switch> 
+                        <Switch x:Name="entotr" BackgroundColor="White"></Switch> 
                         
                     </StackLayout>
                 </StackLayout>
-                
-                <Button HorizontalOptions="End" WidthRequest="210" Text="CONFIG" Clicked="Button_Clicked"></Button>
-                
+
+                <Button HorizontalOptions="End" WidthRequest="210" Margin="30,0,0,0" Text="CONFIG" Clicked="Button_Clicked"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
