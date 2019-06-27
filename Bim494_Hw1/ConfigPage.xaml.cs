@@ -23,7 +23,7 @@ namespace Bim494_Hw1
         private void AddWord(object sender, EventArgs e)
         {
 
-            App.UserRepo.AddNewWord(TurkishWord.Text, EnglishWord.Text);
+            UserRepository.AddNewWord(TurkishWord.Text, EnglishWord.Text);
             DependencyService.Get<IMessage>().Message(App.UserRepo.StatusMessage);
             
         }

@@ -16,6 +16,11 @@ namespace Bim494_Hw1.Model
 
         [MaxLength(250), Unique]
         public string EnglishWord { get; set; }
-        
+
+        public override string ToString()
+        {
+            return TurkishWord;
+        }
+                  
     }
 }

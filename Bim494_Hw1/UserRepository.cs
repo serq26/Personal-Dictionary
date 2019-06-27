@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Bim494_Hw1.Model;
 using SQLite;
 using Xamarin.Forms;
@@ -80,7 +81,7 @@ namespace Bim494_Hw1
 
         /////////////   Here for Words  ///////////////////////////////////
 
-        public void AddNewWord(string Turkishword, string Englishword)
+        public static void AddNewWord(string Turkishword, string Englishword)
         {
             int result = 0;
             try
@@ -90,12 +91,12 @@ namespace Bim494_Hw1
 
                 result = connWords.Insert(new Words { TurkishWord = Turkishword , EnglishWord = Englishword });
 
-                StatusMessage = string.Format("{0} - {1} added", Turkishword,Englishword);
+                //StatusMessage = string.Format("{0} - {1} added", Turkishword,Englishword);
 
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format("Failed to add {0}. Error: {1}", Turkishword, ex.Message);
+                //StatusMessage = string.Format("Failed to add {0}. Error: {1}", Turkishword, ex.Message);
             }
         }
 
@@ -157,8 +158,7 @@ namespace Bim494_Hw1
         }
 
         public void DeleteWord(string word)
-        {
-            
+        {            
             try
             {
                 if (string.IsNullOrEmpty(word.ToString()))
@@ -166,7 +166,7 @@ namespace Bim494_Hw1
 
                 //result = connWords.Delete<Words>(word);
                 var deleted = connWords.Query<Words>($"DELETE FROM Words WHERE TurkishWord = '{word}' OR EnglishWord = '{word}'");
-                StatusMessage = string.Format("{0} deleted", word);
+                StatusMessage = string.Format("{0} deleted", word);               
 
             }
             catch (Exception ex)
@@ -175,6 +175,20 @@ namespace Bim494_Hw1
             }
         }
 
+
+        public static void DeleteWord(bool result, string word)
+        {
+            if (result)
+            {
+                var deleted = UserRepository.connWords.Query<Words>($"DELETE FROM Words WHERE TurkishWord = '{word}' OR EnglishWord = '{word}'");
+            }
+            
+        }
+
+        private Task<bool> DisplayAlert(string v1, string v2, string v3, string v4)
+        {
+            throw new NotImplementedException();
+        }
 
         public static List<Words> GetAllWord()
         {

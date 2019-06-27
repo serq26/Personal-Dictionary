@@ -1,45 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bim494_Hw1.MyWords" Title="My Words">
+             x:Class="Bim494_Hw1.MyWords" Title="My Words" BackgroundColor="#2C2E30">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout HeightRequest="400" VerticalOptions="Center" HorizontalOptions="Center" Margin="20,20,0,0">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="English" FontAttributes="Bold" TextDecorations="Underline" Margin="40,0,0,0"/>
-                    <Image Source="https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-512.png" HeightRequest="20" WidthRequest="20"/>
-                    <Image Margin="90,0,0,0" Source="https://cdn1.iconfinder.com/data/icons/rounded-flat-country-flag-collection-1/2000/tr-01.png" HeightRequest="20" WidthRequest="20"/>
-                    <Label Text="Turkish" FontAttributes="Bold" TextDecorations="Underline" Margin="0,0,0,0"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <ListView x:Name="englishword" SeparatorColor="Gray">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell Height="30">
-                                    <StackLayout Padding="5" Orientation="Horizontal">
-                                        <Label Margin="45,0,0,0" Text="{Binding EnglishWord}" TextColor="Black" FontSize="18" />
-                                        <!--<Label Margin="155,0,0,0" Text="{Binding TurkishWord}" TextColor="Black" FontSize="18" />-->
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="20,20,0,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="English" FontAttributes="Bold" TextDecorations="Underline" Margin="45,0,0,0" TextColor="WhiteSmoke"/>
+                        <Image Source="https://cdn1.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_United_Kingdom_-_Circle-512.png" HeightRequest="20" WidthRequest="20"/>
+                        <Image Margin="90,0,0,0" Source="https://cdn1.iconfinder.com/data/icons/rounded-flat-country-flag-collection-1/2000/tr-01.png" HeightRequest="20" WidthRequest="20"/>
+                        <Label Text="Turkish" FontAttributes="Bold" TextDecorations="Underline" Margin="5,0,0,0" TextColor="WhiteSmoke"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <ListView x:Name="englishword" SeparatorColor="Gray" ItemSelected="Englishword_ItemSelected" RowHeight="50">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell Height="30">
 
-                    <ListView Margin="-210,0,0,0" x:Name="turkishword" SeparatorColor="Gray">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="250"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Text="{Binding EnglishWord}" TextColor="WhiteSmoke" FontSize="18" />
+                                            <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0" Grid.Column="1" Text="{Binding TurkishWord}" TextColor="WhiteSmoke" FontSize="18" />
+                                        </Grid>
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <!--<ListView Margin="-210,0,0,0" x:Name="turkishword" SeparatorColor="Gray" ItemSelected="Turkishword_ItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell Height="30">
                                     <StackLayout Padding="5" Orientation="Horizontal">
-                                        <!--<Label Margin="45,0,0,0" Text="{Binding EnglishWord}" TextColor="Black" FontSize="18" />-->
                                         <Label Margin="155,0,0,0" Text="{Binding TurkishWord}" TextColor="Black" FontSize="18" />
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>
+                    </ListView>-->
 
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -18,6 +18,8 @@ namespace Bim494_Hw1.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             string dbPath = FileAccessHelper.GetLocalFilePath("database.db3");
             LoadApplication(new App(dbPath));

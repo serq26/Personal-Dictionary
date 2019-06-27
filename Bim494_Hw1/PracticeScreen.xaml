@@ -2,23 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
-             x:Class="Bim494_Hw1.PracticeScreen" Title="Practice">
+             x:Class="Bim494_Hw1.PracticeScreen" Title="Practice" BackgroundColor="#2C2E30">
          
     <ContentPage.Content>
 
         <StackLayout Orientation="Vertical" HeightRequest="900" VerticalOptions="Start">
 
-            <Image x:Name="Card" Aspect="AspectFit" Source="card2" Margin="0,50,0,0" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="500" WidthRequest="300">
+            <Image x:Name="Card" Aspect="AspectFit" Source="new_card" Margin="0,50,0,0" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="500" WidthRequest="300">
                 <Image.GestureRecognizers>
                     <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped"/>
                     <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped"/>
                 </Image.GestureRecognizers>
             </Image>
-            
-            <Label x:Name="EnglishWord" Text="DOOR" TextColor="White" HorizontalOptions="Center" Margin="0,-300,0,0" FontSize="36" FontAttributes="Bold"/>
 
-            <Label x:Name="TurkishWord" TextColor="White" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold" Margin="0,100,0,0"/>
+            <Frame BackgroundColor="Transparent" HeightRequest="120" WidthRequest="260" HorizontalOptions="Center" Margin="0,-380,0,0">
 
+                <Label x:Name="EnglishWord" Text="DOOR" TextColor="White" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold"/>
+
+            </Frame>
+
+            <Frame BackgroundColor="Transparent" HeightRequest="100" WidthRequest="260" HorizontalOptions="Center" Margin="0,20,0,0">
+                
+                <Label x:Name="TurkishWord" TextColor="White" HorizontalOptions="Center" FontSize="36" FontAttributes="Bold"/>
+                
+            </Frame>
             <!--<Button
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
@@ -31,7 +38,7 @@
                 </Button.Triggers>
             </Button>-->
 
-            <Button Margin="0,100,0,0" WidthRequest="150" HeightRequest="50" Text="NEXT >" HorizontalOptions="Center" Clicked="Next_Button_Clicked"/>
+            <Button Margin="0,50,0,0" BackgroundColor="#770D0D" TextColor="WhiteSmoke" WidthRequest="150" HeightRequest="50" Text="NEXT" HorizontalOptions="Center" FontAttributes="Bold" Clicked="Next_Button_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>

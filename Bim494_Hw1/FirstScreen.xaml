@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bim494_Hw1.FirstScreen">
+             x:Class="Bim494_Hw1.FirstScreen" BackgroundColor="#2C2E30">
     <ContentPage.Content>
 
         <StackLayout>
 
             <StackLayout HorizontalOptions="Center">
-                <Label Text="PERSONAL DICTIONARY" FontAttributes="Bold"  FontSize="22"/>
+                <Label TextColor="White" Text="PERSONAL DICTIONARY" FontAttributes="Bold" Margin="0,20,0,0" FontSize="22"/>
             </StackLayout>
             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
 
                 <StackLayout Padding="5" Orientation="Horizontal" HorizontalOptions="Center">
-                    <Frame HeightRequest="130" WidthRequest="150" HasShadow="True">
+                    <Frame HeightRequest="130" WidthRequest="150" HasShadow="True" BackgroundColor="WhiteSmoke">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -20,7 +20,7 @@
                             </Grid.RowDefinitions>
 
                             <Image Grid.Row="0" Source="dictionary" />
-                            <Label Text="My Vocabulary" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="My Vocabulary" TextColor="#770D0D" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="16"/>
                         </Grid>
 
                         <Frame.GestureRecognizers>
@@ -28,7 +28,7 @@
                         </Frame.GestureRecognizers>
                     </Frame>
 
-                    <Frame HeightRequest="130" WidthRequest="150" HasShadow="True">
+                    <Frame HeightRequest="130" WidthRequest="150" HasShadow="True" BackgroundColor="WhiteSmoke">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -36,7 +36,7 @@
                             </Grid.RowDefinitions>
 
                             <Image Grid.Row="0" Source="practice" />
-                            <Label Text="Practice" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="Practice" TextColor="#770D0D" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="16"/>
                         </Grid>
 
                         <Frame.GestureRecognizers>
@@ -47,7 +47,7 @@
                 </StackLayout>
 
                 <StackLayout Padding="5" HorizontalOptions="Center">
-                    <Frame HeightRequest="130" WidthRequest="150" HasShadow="True">
+                    <Frame HeightRequest="130" WidthRequest="150" HasShadow="True" BackgroundColor="WhiteSmoke">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
@@ -55,7 +55,7 @@
                             </Grid.RowDefinitions>
 
                             <Image Grid.Row="0" Source="words" />
-                            <Label Text="My Words" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="My Words" TextColor="#770D0D" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="16"/>
                         </Grid>
 
                         <Frame.GestureRecognizers>
@@ -67,7 +67,7 @@
             </StackLayout>
 
             <StackLayout VerticalOptions="End" HorizontalOptions="End" Padding="10">
-                <Label Text="Made by Serhat ÇOLAK" FontSize="12"  FontAttributes="Italic"/>
+                <Label Text="Made by Serhat ÇOLAK" FontSize="12" TextColor="WhiteSmoke" FontAttributes="Italic"/>
             </StackLayout>
             
         </StackLayout>

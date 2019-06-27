@@ -41,6 +41,7 @@ namespace Bim494_Hw1
                     });
                     TurkishWord.Text = UserRepository.GetTurkishWord(EnglishWord.Text);                    
                     break;
+
                 case SwipeDirection.Right:
                     Card.Animate(new FlipAnimation
                     {
@@ -49,7 +50,7 @@ namespace Bim494_Hw1
                         Easing = EasingType.Linear
                     });
                     TurkishWord.Text = UserRepository.GetTurkishWord(EnglishWord.Text);
-                    break;             
+                    break;              
             }
         }
 
