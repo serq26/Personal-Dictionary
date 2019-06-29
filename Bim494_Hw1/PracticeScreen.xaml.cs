@@ -50,7 +50,8 @@ namespace Bim494_Hw1
                         Easing = EasingType.Linear
                     });
                     TurkishWord.Text = UserRepository.GetTurkishWord(EnglishWord.Text);
-                    break;              
+                    break;
+
             }
         }
 
@@ -59,6 +60,23 @@ namespace Bim494_Hw1
             i++;          
 
             if (i == MyWords.Count)
+            {
+                EnglishWord.Text = "Finish!";
+                TurkishWord.Text = "";
+                i = 0;
+            }
+            else
+            {
+                EnglishWord.Text = MyWords[i].EnglishWord;
+                TurkishWord.Text = "";
+            }
+        }
+
+        private void Previous_Button_Clicked(object sender, EventArgs e)
+        {
+            i--;
+
+            if (i < 0)
             {
                 EnglishWord.Text = "Finish!";
                 TurkishWord.Text = "";

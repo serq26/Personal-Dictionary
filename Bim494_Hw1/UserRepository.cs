@@ -218,7 +218,48 @@ namespace Bim494_Hw1
            
         }
 
+        public static string GetEnglishWord(Words Word)
+        {
+            try
+            {
+                var Engdata = connWords.Query<Words>($"SELECT EnglishWord FROM Words WHERE TurkishWord='{Word}'");
+                return Engdata[0].EnglishWord;
+            }
+            catch (Exception ex)
+            {
+                return "There is no this word..!";
+            }
+
+        }
+
+        public static List<Words> FindEnglishWord(string Word)
+        {
+            try
+            {
+                List<Words> Engdata = connWords.Query<Words>($"SELECT * FROM Words WHERE EnglishWord LIKE '{Word}%'");
+                return Engdata;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
         public static string GetTurkishWord(string Word)
+        {
+            try
+            {                
+                var Turkdata = connWords.Query<Words>($"SELECT TurkishWord FROM Words WHERE EnglishWord='{Word}'");               
+                return Turkdata[0].TurkishWord;
+            }
+            catch (Exception ex)
+            {
+                return "There is no this word..!";
+            }
+        }
+
+        public static string GetTurkishWord(Words Word)
         {
             try
             {
@@ -229,6 +270,20 @@ namespace Bim494_Hw1
             {
                 return "There is no this word..!";
             }
+        }
+
+        public static List<Words> FindTurkishWord(string Word)
+        {
+            try
+            {
+                List<Words> Turkdata = connWords.Query<Words>($"SELECT * FROM Words WHERE TurkishWord LIKE '{Word}%'");
+                return Turkdata;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
     }
 }
