@@ -1,5 +1,5 @@
 # Personal-Dictionary
-This is personal dictionary. Turkish > English and English > Turkish
+This is personal dictionary mobile app(Android/iOS). Turkish > English and English > Turkish
 Practice with words learning
 
 <img src="Screenshots/1.png" width="300" height="500" >       <img src="Screenshots/2.png" width="300" height="500" > 
